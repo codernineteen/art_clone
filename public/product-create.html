@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- font -->
+    <link rel="stylesheet" href="https://use.typekit.net/snx7zgg.css">
+    
+    <title>ARRT'EMIS - new product</title>
+</head>
+
+<body>
+    <form
+        accept="image/x-png,image/gif,image/jpeg" 
+        action="/products/create"
+        class="product_form" 
+        method="post" 
+        enctype="multipart/form-data"
+    >
+        <h1>New Product</h1>
+        <div class="form-control">
+
+            <div class="nameWrapper">
+                <label for="product_name">Product Name</label>
+                <input type="text" name="product_name" class="product_name"/>
+            </div>
+
+            <div class="colorWrapper">
+                <label for="product_color">Color</label>
+                <ul class="product_color_list"></ul>
+                <input type="text" name="product_color" class="product_color"/>
+                <input type="button" class="product_color_add" value="Add">
+            </div>
+            
+            <div class="designWrapper">
+                <label for="product_design">Desgin</label>
+                <ul class="product_design_list"></ul>
+                <input type="text" name="product_design" class="product_design"/>
+                <input type="button" class="product_design_add" value="Add">
+            </div>
+
+            <div class="materialWrapper">
+                <label for="product_material">Material</label>
+                <ul class="product_material_list"></ul>
+                <input type="text" name="product_material" class="product_material"/>
+                <input type="button" class="product_material_add" value="Add">
+            </div>
+
+            <div class="priceWrapper">
+                <label for="product_price">Price</label>
+                <input type="number" name="product_price" class="product_price"/>
+            </div>
+
+            <div class="priceWrapper">
+                <label for="product_size">Size</label>
+                <label><input type="checkbox" name="product_size" value="s" class="product_size">S</label>
+                <label><input type="checkbox" name="product_size" value="m" class="product_size">M</label>
+                <label><input type="checkbox" name="product_size" value="l" class="product_size">L</label>
+                <label><input type="checkbox" name="product_size" value="xl" class="product_size">XL</label>
+                <label><input type="checkbox" name="product_size" value="free" class="product_size">FREE</label>
+
+            </div>
+
+            <div class="categoryWrapper">
+                <label for="product_category">Category</label>
+                <select name="product_category" id="product_category">
+                    <option value="top">top</option>
+                    <option value="hats">hats</option>
+                    <option value="others">others</option>
+                </select>
+            </div>
+
+            <div class="imageWrapper1">
+                <label for="partImages">부분 이미지 + 피팅샷(선택)</label>
+                <input type="file" name="partImages" class="partImages" multiple/>
+            </div>
+            <div class="imageWrapper1">
+                <label for="totalImages">전체 이미지</label>
+                <input type="file" name="totalImages" class="totalImages" multiple/>
+            </div>
+            
+        </div>
+        <button class="product_submit_btn">submit</button>
+    </form>
+
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="/assets/js/product.js"></script>
+</body>
+
+</html>
