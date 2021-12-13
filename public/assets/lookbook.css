@@ -1,0 +1,85 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: Acumin Pro, sans-serif;
+}
+
+.wrapper {
+  position: relative;
+  height: 100vh;
+  margin: 2rem;
+}
+/*header*/
+.header {
+  display: flex;
+  justify-content: space-between;
+  height: 10%;
+}
+
+.header-logo-part img {
+  width: 20rem;
+}
+
+.nav {
+  display: flex;
+  justify-content: space-around;
+  font-size: 2rem;
+}
+
+.nav-item {
+  padding-right: 1rem;
+}
+/*main*/
+.main-section {
+  display: flex;
+  height: 80%;
+  padding-left: 2rem;
+  padding-top: 3rem;
+}
+
+.main-menu-part {
+  width: 8%;
+}
+
+.main-lookbook-part {
+  flex: 1;
+}
+
+.main-lookbook-container {
+  display: flex;
+}
+
+.main-lookbook-detail {
+  border-top: 2px solid #000;
+  border-top: 2px solid #000;
+}
+
+.main-lookbook-photo {
+  width: 20%;
+  border-top: 1px solid #000;
+  border-left: 1px solid #000;
+}
+
+.main-lookbook-img {
+  width: 100%;
+}
+/*footer*/
+.footer-information {
+  display: flex;
+  justify-content: center;
+}
+
+.footer-item {
+  margin: 2rem;
+  font-size: 1.5rem;
+}

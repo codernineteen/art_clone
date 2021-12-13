@@ -1,0 +1,85 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: Acumin Pro, sans-serif;
+}
+
+.wrapper {
+  position: relative;
+  height: 100vh;
+  margin: 2rem;
+}
+/*header*/
+.header {
+  display: flex;
+  justify-content: space-between;
+  height: 10%;
+}
+
+.header-logo-part img {
+  width: 20rem;
+}
+
+.nav {
+  display: flex;
+  justify-content: space-around;
+  font-size: 2rem;
+}
+
+.nav-item {
+  padding-right: 1rem;
+}
+/*main*/
+.main-section {
+  display: flex;
+  height: 70%;
+  padding-left: 2rem;
+  padding-top: 3rem;
+}
+
+.main-fitting-part {
+  flex: 1;
+}
+
+.main-product-img-part {
+  display: flex;
+  justify-content: center;
+  flex: 3;
+}
+
+.main-product-detail-img {
+  width: 40rem;
+}
+
+.main-product-options-part {
+  flex: 1.5;
+}
+
+/*related*/
+.related-section {
+  height: 10%;
+}
+/*footer*/
+.footer {
+  height: 10%;
+}
+
+.footer-information {
+  display: flex;
+  justify-content: center;
+}
+
+.footer-item {
+  margin: 2rem;
+  font-size: 1.5rem;
+}

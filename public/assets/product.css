@@ -1,0 +1,97 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: Acumin Pro, sans-serif;
+}
+
+.wrapper {
+  position: relative;
+  height: 100vh;
+  margin: 2rem;
+}
+/*header*/
+.header {
+  display: flex;
+  justify-content: space-between;
+  height: 10%;
+}
+
+.header-logo-part img {
+  width: 20rem;
+}
+
+.nav {
+  display: flex;
+  justify-content: space-around;
+  font-size: 2rem;
+}
+
+.nav-item {
+  padding-right: 1rem;
+}
+/*main*/
+.main-section {
+  display: flex;
+  height: 80%;
+  padding-left: 2rem;
+  padding-top: 3rem;
+}
+
+.main-logo-part img {
+  height: 5rem;
+  width: 5rem;
+}
+
+.main-menu-part {
+  width: 8%;
+}
+
+.main-item {
+  font-size: 2rem;
+  text-transform: uppercase;
+}
+
+.main-product-part {
+  flex-grow: 1;
+  padding-right: 8%;
+}
+
+.product-grid-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+}
+
+.each-product {
+  margin-bottom: 2rem;
+}
+
+.each-product-img {
+  height: 35rem;
+  width: 25rem;
+}
+
+.each-product-name {
+  text-align: center;
+}
+
+/*footer*/
+.footer-information {
+  display: flex;
+  justify-content: center;
+}
+
+.footer-item {
+  margin: 2rem;
+  font-size: 1.5rem;
+}
