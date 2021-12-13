@@ -13,17 +13,26 @@
     <!-- font -->
     <link rel="stylesheet" href="https://use.typekit.net/snx7zgg.css">
     <link rel="stylesheet" href="/assets/style/product-detail.css">
-    <!-- bootstrap -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <!-- icon -->
+    <script src="https://kit.fontawesome.com/0f0c6f90bb.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
-
     <div class="wrapper">
+
+        <div class="product-size-pop-up hidden">
+            <div class="pop-up-wrapper">
+                <button class="pop-up-exit">
+                    <i class="fas fa-times pop-up-exit-icon"></i>
+                </button>
+                <img src="/images/sizeguide.png" alt="" width="738" height="783">
+            </div>
+        </div>
+
         <div class="header">
 
             <div class="header-logo-part">
-                <img src="/images/폰트LOGO.png" alt="ARRT`EMIS FONT LOGO">
+                <a href="/"><img src="/images/폰트LOGO.png" alt="ARRT`EMIS FONT LOGO"></a>
             </div>
             
             <div class="nav">
@@ -34,49 +43,90 @@
             </div>
 
         </div>
-    
+        <div class="header-product-tag">
+            <%= product.category %>
+        </div>
         <div class="main-section">
             <!-- carousel-->
             <div class="main-fitting-part">
-                <img 
-                    src="/images/productImage/<%= product.partImages[0]['name'] %>" 
-                    alt="fitting shot"
-                    width= "105"
-                    height= "141"
-                >
+                <div class="main-fitting-img-wrapper">
+                    <% for (let i=0; i < product.partImages.length; i++) { %>
+                        <img 
+                            src="/images/productImage/<%= product.partImages[i]['name'] %>" 
+                            alt="fitting shot"
+                            width= "105"
+                            height= "141"
+                            class = "main-fitting-img"
+                        >
+                    <% } %>
+                    <button class="part_prev"><i class="fas fa-angle-up"></i></button>
+                    <button class="part_next"><i class="fas fa-angle-down"></i></button>
+                </div>
             </div>
 
             <!-- carousel-->
-            <div class="carousel-wrapper">
-                <div class="main-product-img-part carousel">
-                    <% for (let item of product.totalImages) { %>
-                        <img 
-                            src="/images/productImage/<%= item['name'] %>" 
-                            alt="fitting shot"
-                            width= "738"
-                            height= "783"
-                            class="main-product-img"
-                        >
-                    <% } %>
+            <div class="main-product-img-part">
+                <div class="carousel-wrapper">
+                    <div class="carousel">
+                        <% for (let item of product.totalImages) { %>
+                            <img 
+                                src="/images/productImage/<%= item['name'] %>" 
+                                alt="fitting shot"
+                                width= "522"
+                                height= "783"
+                                class="main-product-img"
+                            >
+                        <% } %>
+                    </div>
+                    <div class="main-product-img-location">1/<%= product.totalImages.length%></div>
+                    <button class="total_prev"><i class="fas fa-chevron-left total_prev_icon"></i></button>
+                    <button class="total_next"><i class="fas fa-chevron-right total_next_icon"></i></button>
                 </div>
-                <button class="prev">prev</button>
-                <button class="next">next</button>
             </div>
 
             <div class="main-product-options-part">
-                <div class="product-name"><%= product.name %></div>
-                <div class="product-material"><%= product.material %></div>
-                <div class="product-design"><%= product.design %></div>
-                <div class="product-color"><%= product.color %></div>
-                <div class="product-size"><%= product.size %></div>
-                <div class="product-price">
-                    <%= product.price %>
+                <div class="main-product-options-wrapper">
+                    <div class="main-product-name"><%= product.name %></div>
+                    <div class="main-product-design">
+                        <% for(let design of product.design) { %>
+                            <p><%= design %></p>
+                        <% } %>
+                    </div>
+                    <div class="main-product-material">
+                        <% for(let material of product.material) { %>
+                            <p><%= material %></p>
+                        <% } %>
+                    </div>
+                    <div class="main-product-origin">Made in <%= product.origin %></div>
+                    
+                    <div class="main-product-color">
+                        <div class="main-product-color-title">color</div>
+                        <div class="main-product-color-value"><%= product.color %></div>
+                    </div>
+
+                    <div class="main-product-size">
+                        <div class="main-product-size-title">size</div>
+                        <div class="main-product-size-value"><%= product.size %></div>
+                    </div>
+
+                    <div class="divide-line">&nbsp;</div>
+
+                    <div class="main-product-price">
+                        <div class="main-product-price-title">price</div>
+                        <div class="main-product-price-value"><%= product.price %></div>
+                    </div>
+
+                    <div class="main-product-buy">
+                        <div class="main-product-buy-link">
+                            <a href="#">buy</a>
+                        </div>
+                    </div>
+
+                    <div class="divide-line">&nbsp;</div>
+
+                    <button class="product-size-guide">fitting size guide</button>
+                    <button class="product-policy">return & exchange</button>
                 </div>
-                <div class="buy-link">
-                    <input type="button" value="buy">
-                </div>
-                <div class="product-size-guide">fitting size guide</div>
-                <div class="product-policy">return & exchange</div>
             </div>
 
         </div>
@@ -98,7 +148,7 @@
         </div>  
     </div>
 
-    <script src="/assets/js/carousel.js"></script>
+    <script src="/assets/js/productSingle.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>

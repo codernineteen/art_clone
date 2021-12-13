@@ -49,7 +49,7 @@ productForm.addEventListener('submit', async(e) => {
 
     const name = document.querySelector('.product_name').value;
     const price = Number(document.querySelector('.product_price').value);
-    const color = colorArr;
+    
     const design = designArr;
     const material = materialArr;
     const size = sizeArr;
@@ -61,11 +61,19 @@ productForm.addEventListener('submit', async(e) => {
         const formData = new FormData();
         formData.append('name', name)
         formData.append('price', price)
-        formData.append('color', color)
-        formData.append('design', design)
-        formData.append('material', material)
         formData.append('category', category)
-        formData.append('size', size)
+        for(let color of colorArr) {
+            formData.append('color', color)
+        }
+        for(let design of designArr) {
+            formData.append('design', design)
+        }
+        for(let material of materialArr) {
+            formData.append('material', material)
+        }
+        for(let size of sizeArr) {
+            formData.append('size', size)
+        }
         for (let image of partImages) {
             formData.append('partImages', image)
         }
