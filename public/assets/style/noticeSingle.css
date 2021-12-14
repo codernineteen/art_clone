@@ -40,8 +40,9 @@ li {
 
 .wrapper {
   position: relative;
-  height: 100vh;
+  height: 110vh;
   margin: 2rem;
+  padding-right: 2rem;
 }
 /*header*/
 .header {
@@ -60,6 +61,7 @@ li {
 }
 
 .nav-item {
+  padding-top: 4rem;
   font-size: 2rem;
   margin-left: 2rem;
   text-transform: uppercase;
@@ -67,55 +69,4 @@ li {
 
 .nav-item:hover {
   color: #888;
-}
-
-/*main*/
-.main-section {
-  display: flex;
-  height: 70%;
-  padding-left: 2rem;
-  padding-top: 3rem;
-  margin-bottom: 7rem;
-}
-
-.main-logo-part img {
-  height: 5rem;
-  width: 5rem;
-}
-
-.main-menu-part {
-  width: 20%;
-}
-/* menu-iten */
-.main-item {
-  font-size: 2rem;
-  text-transform: uppercase;
-}
-
-.main-item:hover {
-  color: #888;
-}
-
-.main-logo-part {
-  flex-grow: 1;
-}
-
-.main-logo-part img {
-  position: absolute;
-  top: 45%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  height: 60rem;
-  width: 60rem;
-}
-/*footer*/
-.footer-information {
-  display: flex;
-  justify-content: center;
-}
-
-.footer-item {
-  margin: 2rem;
-  font-size: 1.5rem;
-  text-transform: uppercase;
 }

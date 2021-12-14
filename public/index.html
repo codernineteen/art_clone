@@ -10,6 +10,8 @@
     <!-- font -->
     <link rel="stylesheet" href="https://use.typekit.net/snx7zgg.css">
     <link rel="stylesheet" href="./assets/style/index.css">
+     <!-- icon -->
+     <script src="https://kit.fontawesome.com/0f0c6f90bb.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
@@ -21,11 +23,17 @@
             </div>
             
             <div class="nav">
-                <div class="nav-item portal">portal</div>
+                <div class="nav-item portal"><i class="fab fa-instalod"></i></div>
                 <div class="nav-item instagram">
-                    <a href="https://www.instagram.com/arrtemis__official/" target="_blank">instagram</a>
+                    <a href="https://www.instagram.com/arrtemis__official/" target="_blank"><i class="fab fa-instagram"></i></a>
                 </div>
-                <div class="nav-item community">community</div>
+                <div class="nav-item community">
+                    <label for="community-menu">community</label>
+                    <ul name="community-menu" class="community-menu hidden">
+                        <li class="community-menu-item"><a href="/notice">notice</a></li>
+                        <li class="community-menu-item"><a href="#">Q&A</a></li>
+                    </ul>
+                </div>
                 <div class="nav-item search">search</div>
             </div>
 
@@ -34,12 +42,18 @@
         <div class="main-section">
 
             <div class="main-menu-part">
-                <div class="main-item title">about</div>
-                <div class="main-item all-items"><a href="/products">allItems</a></div>
-                <div class="main-item top">top</div>
-                <div class="main-item hats">hats</div>
-                <div class="main-item others">others</div>
-                <div class="main-item archive">archive</div>
+                <div class="main-item title">about.</div>
+                <div class="main-item all-items"><a href="/products">allItems.</a></div>
+                <div class="main-item top">top.</div>
+                <div class="main-item hats">hats.</div>
+                <div class="main-item others">others.</div>
+                <div class="main-item archive">
+                    <label for="archive-menu" class="archive-menu-label">archive.</label>
+                    <ul name="archive-menu" class="archive-menu hidden">
+                        <li class="archive-menu-item"><a href="/archives/lookbook">lookbook</a></li>
+                        <li class="archive-menu-item"><a href="#">videos</a></li>
+                    </ul>
+                </div>
             </div>
 
             <div class="main-logo-part">
@@ -53,13 +67,15 @@
             <div class="footer-information">
                 <div class="footer-item stores">stores</div>
                 <div class="footer-item contact">contact</div>
-                <div class="footer-item shipping-return">shippingAndReturn</div>
-                <div class="footer-item policy">policy</div>
-                <div class="footer-item copyright">copyright</div>
+                <div class="footer-item shipping-return">shipping&Return</div>
+                <div class="footer-item policy">privacy policy</div>
+                <div class="footer-item copyright"><i class="far fa-copyright"></i>2021 arrt`emis co.</div>
             </div>
 
         </div>  
     </div>
+
+    <script src="/assets/js/index.js"></script>
 </body>
 
 </html>

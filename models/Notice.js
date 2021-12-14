@@ -5,15 +5,15 @@ const NoticeSchema = new mongoose.Schema({
         type: Number,
         required: [true, 'index needed']
     },
-    name: {
-        type: String,
-        required: [true, 'name needed'],
-    },
     subject : {
         type: String,
         required: [true, 'subject needed'],
         maxlength: 50,
         minlength: 5 
+    },
+    name: {
+        type: String,
+        required: [true, 'name needed'],
     },
     writerId : {
         type: mongoose.Types.ObjectId,

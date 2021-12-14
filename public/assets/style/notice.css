@@ -14,10 +14,35 @@ body {
   font-family: Acumin Pro, sans-serif;
 }
 
+a:visited,
+a:link {
+  text-decoration: none;
+  color: inherit;
+}
+
+li {
+  list-style: none;
+}
+
+.hidden {
+  display: none;
+}
+
+.align-items-row {
+  display: flex;
+  flex-direction: row;
+}
+
+.available-margin {
+  display: block;
+  margin-right: 1rem;
+}
+
 .wrapper {
   position: relative;
-  height: 100vh;
+  height: 110vh;
   margin: 2rem;
+  padding-right: 2rem;
 }
 /*header*/
 .header {
@@ -33,18 +58,27 @@ body {
 .nav {
   display: flex;
   justify-content: space-around;
-  font-size: 2rem;
 }
 
 .nav-item {
-  padding-right: 1rem;
+  padding-top: 4rem;
+  font-size: 2rem;
+  margin-left: 2rem;
+  text-transform: uppercase;
 }
+
+.nav-item:hover {
+  color: #888;
+}
+
 /*main*/
+
 .main-section {
   display: flex;
   height: 80%;
   padding-left: 2rem;
   padding-top: 3rem;
+  margin-bottom: 7rem;
 }
 
 .main-logo-part img {
@@ -53,11 +87,16 @@ body {
 }
 
 .main-menu-part {
-  width: 8%;
+  width: 15%;
 }
-
+/* menu-iten */
 .main-item {
   font-size: 2rem;
+  text-transform: uppercase;
+}
+
+.main-item:hover {
+  color: #888;
 }
 
 .main-notice-part {
@@ -73,11 +112,43 @@ body {
   padding-top: 3rem;
 }
 
-.main-notice-structure {
+.dividing-line {
+  background-color: #000;
+  height: 2px;
   width: 100%;
-  border-top: 2px solid #000;
-  text-align: left;
 }
+
+.main-notice-container {
+  display: grid;
+  grid-template-rows: repeat(15, 1fr);
+}
+
+.main-notice-header {
+  padding-top: 1rem;
+  display: grid;
+  grid-template-columns: 0.5fr 3fr 0.7fr 0.7fr 0.5fr;
+  background-color: #eee;
+}
+
+.main-notice-header-item {
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.main-notice-body {
+  padding-top: 1rem;
+  display: grid;
+  grid-template-columns: 0.5fr 3fr 0.7fr 0.7fr 0.5fr;
+}
+
+.main-notice-body-item {
+  height: 2rem;
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
 /*footer*/
 .footer-information {
   display: flex;
@@ -87,4 +158,5 @@ body {
 .footer-item {
   margin: 2rem;
   font-size: 1.5rem;
+  text-transform: uppercase;
 }

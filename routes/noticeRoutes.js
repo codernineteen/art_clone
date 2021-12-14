@@ -7,13 +7,17 @@ const {
     getAllNotices,
     getSingleNotice,
     updateNotice,
-    deleteNotice
+    deleteNotice,
+    getAllNoticesData
 } = require('../controller/noticeController');
 
 
 router.route('/')
     .get(getAllNotices)
     .post(authentication, authorizePermission('devADMIN'), createNotice)
+
+router.route('/jsonData')
+    .get(getAllNoticesData)
 
 router.route('/:id')
     .get(getSingleNotice)
