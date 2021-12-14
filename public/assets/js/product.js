@@ -49,10 +49,6 @@ productForm.addEventListener('submit', async(e) => {
 
     const name = document.querySelector('.product_name').value;
     const price = Number(document.querySelector('.product_price').value);
-    
-    const design = designArr;
-    const material = materialArr;
-    const size = sizeArr;
     const category = document.querySelector('#product_category').value;
     const partImages = document.querySelector('.partImages').files;
     const totalImages = document.querySelector('.totalImages').files;
@@ -89,7 +85,7 @@ productForm.addEventListener('submit', async(e) => {
             alert('데이터가 누락되었습니다. 모든 데이터를 올바르게 입력해주세요.')
         }
         if(statusCode === 400) {
-            alert('올바르지 않은 파일 형식입니다.')
+            alert('올바르지 않은 요청입니다.')
         }
         if (statusCode === 201) {
             alert('제품이 정상적으로 업로드 됐습니다!')

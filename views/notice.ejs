@@ -9,7 +9,7 @@
 
     <!-- font -->
     <link rel="stylesheet" href="https://use.typekit.net/snx7zgg.css">
-    <link rel="stylesheet" href="./assets/style/notice.css">
+    <link rel="stylesheet" href="/assets/style/notice.css">
      <!-- icon -->
      <script src="https://kit.fontawesome.com/0f0c6f90bb.js" crossorigin="anonymous"></script>
 </head>
@@ -18,7 +18,7 @@
     <div class="header">
 
         <div class="header-logo-part">
-            <a href="/"><img src="./images/폰트LOGO.png" alt="ARRT`EMIS FONT LOGO"></a>
+            <a href="/"><img src="/images/폰트LOGO.png" alt="ARRT`EMIS FONT LOGO"></a>
         </div>
         
         <div class="nav">
@@ -71,18 +71,18 @@
                         <div class="dividing-line">&nbsp;</div>
                         <div class="dividing-line">&nbsp;</div>
                     </div>
-                    <% for (let item of notices) { %>
+            
+                    <% for (let i=0; i < notices.length; i++) { %>
                         <div class="main-notice-body">
-                            <div class="main-notice-body-item"><%= item.index %></div>
+                            <div class="main-notice-body-item"><%= i %></div>
                             <div class="main-notice-body-item subject">
-                                <a href="/notice/<%= item._id %>"><%= item.subject %></a>
-                                <div class="notice-item-id hidden"><%= item._id %></div>
+                                <a href="/notice/<%= notices[i]._id %>"><%= notices[i].subject %></a>
                             </div>
-                            <div class="main-notice-body-item"><%= item.name %></div>
+                            <div class="main-notice-body-item"><%= notices[i].name %></div>
                             <div class="main-notice-body-item">
-                                <%= item.createdAt.getDate() %>.<%= item.createdAt.getMonth() + 1 %>.<%= item.createdAt.getFullYear() %>
+                                <%= notices[i].createdAt.getDate() %>.<%= notices[i].createdAt.getMonth() + 1 %>.<%= notices[i].createdAt.getFullYear() %>
                             </div>
-                            <div class="main-notice-body-item"><%= item.numOfView %></div>
+                            <div class="main-notice-body-item"><%= notices[i].numOfView %></div>
                             <div class="dividing-line">&nbsp;</div>
                             <div class="dividing-line">&nbsp;</div>
                             <div class="dividing-line">&nbsp;</div>

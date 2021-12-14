@@ -1,6 +1,27 @@
 const express = require('express');
 const router = express.Router();
-const {authentication, authorizePermission} = require('../middleware/authenticate')
+const {authentication, authorizePermission} = require('../middleware/authenticate');
+//multer
+const path = require('path')
+const multer = require('multer')
+const uploadPath = path.join(__dirname, '../public/images/lookbookImage')
+
+const storage = multer.diskStorage({
+    destination: function (req, file, cb) {
+        cb(null, uploadPath)
+    },
+    filename: function (req, file, cb) {
+        cb(null, file.originalname)
+    }
+})
+const upload = multer({
+    storage: storage,
+    onFileUploadStart: function (file) {
+        console.log(file.originalname + ' is starting ...')
+    }
+})
+
+module.exports = upload;
 
 const {
     createLookbook,
@@ -13,7 +34,17 @@ const {
 
 router.route('/')
     .get(getAllLookbooks)
-    .post(authentication, authorizePermission('devADMIN'), createLookbook)
+
+router.route('/create')
+    .post(
+        authentication, 
+        authorizePermission('devADMIN'),
+        upload.fields(
+            [
+                {'name': 'images'}
+            ]
+        ), 
+        createLookbook)
 
 router.route('/:id')
     .get(getSingleLookbook)

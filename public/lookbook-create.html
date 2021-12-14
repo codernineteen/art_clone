@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- font -->
+    <link rel="stylesheet" href="https://use.typekit.net/snx7zgg.css">
+    
+    <title>ARRT'EMIS - new lookbook</title>
+</head>
+
+<body>
+    <form
+        accept="image/x-png,image/gif,image/jpeg" 
+        action="/archives/lookbook/create"
+        class="lookbook_form" 
+        method="post" 
+        enctype="multipart/form-data"
+    >
+        <h1>New lookbook</h1>
+        <div class="form-control">
+
+            <div class="titleWrapper">
+                <label for="lookbook_title">lookbook title</label>
+                <input type="text" name="lookbook_title" class="lookbook_title"/>
+            </div>
+
+            <div class="subtitleWrapper">
+                <label for="lookbook_subtitle">lookbook_subtitle</label>
+                <input type="text" name="lookbook_subtitle" class="lookbook_subtitle"/>
+            </div>
+
+            <div class="seasonWrapper">
+                <label for="lookbook_season">Season</label>
+                <select name="lookbook_season" id="lookbook_season">
+                    <option value="spring">spring</option>
+                    <option value="summer">summer</option>
+                    <option value="fall">fall</option>
+                    <option value="winter">winter</option>
+                </select>
+            </div>
+
+
+            <div class="yearWrapper">
+                <label for="lookbook_year">Year</label>
+                <input type="text" name="lookbook_year" class="lookbook_year"/>
+            </div>
+
+            <div class="imageWrapper">
+                <label for="images">Lookbook Images</label>
+                <input type="file" name="images" class="images" multiple/>
+            </div>
+            
+        </div>
+        <button class="lookbook_submit_btn">submit</button>
+    </form>
+
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="/assets/js/lookbook.js"></script>
+</body>
+
+</html>

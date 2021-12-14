@@ -2,7 +2,24 @@ const express = require('express');
 const router = express.Router();
 const {authentication, authorizePermission} = require('../middleware/authenticate')
 //multer - multiple file uploader
-const upload = require('../middleware/multer');
+const path = require('path')
+const multer = require('multer')
+const uploadPath = path.join(__dirname, '../public/images/productImage')
+
+const storage = multer.diskStorage({
+    destination: function (req, file, cb) {
+        cb(null, uploadPath)
+    },
+    filename: function (req, file, cb) {
+        cb(null, file.originalname)
+    }
+})
+const upload = multer({
+    storage: storage,
+    onFileUploadStart: function (file) {
+        console.log(file.originalname + ' is starting ...')
+    }
+})
 
 
 const {

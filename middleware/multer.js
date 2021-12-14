@@ -1,6 +1,6 @@
 const path = require('path')
 const multer = require('multer')
-const uploadPath = path.join(__dirname, '../public/images/productImage')
+const uploadPath = path.join(__dirname, '../public/images')
 
 const storage = multer.diskStorage({
     destination: function (req, file, cb) {

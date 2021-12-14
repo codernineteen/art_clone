@@ -24,9 +24,12 @@ const getAllNotices = async (req, res) => {
     res.status(StatusCodes.OK).render('notice' , {notices})
 }
 
-const getAllNoticesData = async (req, res) => {
-    const notices = await Notice.find({});
-    res.status(StatusCodes.OK).json({notices});
+const getSingleNoticeData = async (req, res) => {
+    const notice = await Notice.findOne({_id: req.params.id});
+    if(!notice) {
+        throw new CustomError.NotFound('No notice with that id')
+    }
+    res.status(StatusCodes.OK).json({notice});
 }
 
 const getSingleNotice = async (req, res) => {
@@ -59,5 +62,5 @@ module.exports = {
     getSingleNotice,
     updateNotice,
     deleteNotice,
-    getAllNoticesData
+    getSingleNoticeData
 }

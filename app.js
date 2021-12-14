@@ -49,7 +49,7 @@ app.use(morgan('dev'));
 app.use(express.json());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use('/products', express.static(path.join(__dirname, '../public')));
-//passport and session
+//cookie parser
 app.use(cookieParser(process.env.JWT_SECRET));
 
 //---------------------------------------------------------------------
@@ -65,10 +65,7 @@ app.get('/auth/login', (req, res) => {
     res.sendFile(path.join(__dirname, './public/login.html'));
 });
 app.use('/user', userRouter)
-//product
-// app.get('/products' , (req, res) => {
-//     res.render('products');
-// })
+
 app.get('/products/create', 
     authentication, 
     authorizePermission('devADMIN'),
@@ -77,10 +74,16 @@ app.get('/products/create',
     }
 )
 app.use('/products', productRouter)
-
-
 app.use('/notice', noticeRouter)
-app.use('/archives', archiveRouter)
+
+app.get('/archives/lookbook/create', 
+    authentication, 
+    authorizePermission('devADMIN'),
+    (req, res) => {
+        res.sendFile(path.join(__dirname, './public/lookbook-create.html'))
+    }
+)
+app.use('/archives/lookbook', archiveRouter)
 
 
 app.use(notFoundErrorMiddleware);

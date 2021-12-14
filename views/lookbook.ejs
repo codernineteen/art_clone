@@ -10,7 +10,9 @@
 
     <!-- font -->
     <link rel="stylesheet" href="https://use.typekit.net/snx7zgg.css">
-    <link rel="stylesheet" href="./assets/lookbook.css">
+    <link rel="stylesheet" href="/assets/style/lookbook.css">
+     <!-- icon -->
+     <script src="https://kit.fontawesome.com/0f0c6f90bb.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
@@ -18,13 +20,21 @@
         <div class="header">
 
             <div class="header-logo-part">
-                <img src="./images/폰트LOGO.png" alt="ARRT`EMIS FONT LOGO">
+                <img src="/images/폰트LOGO.png" alt="ARRT`EMIS FONT LOGO">
             </div>
             
             <div class="nav">
-                <div class="nav-item portal">portal</div>
-                <div class="nav-item instagram">instagram</div>
-                <div class="nav-item community">community</div>
+                <div class="nav-item portal"><i class="fab fa-instalod"></i></div>
+                <div class="nav-item instagram">
+                    <a href="https://www.instagram.com/arrtemis__official/" target="_blank"><i class="fab fa-instagram"></i></a>
+                </div>
+                <div class="nav-item community">
+                    <label for="community-menu">community</label>
+                    <ul name="community-menu" class="community-menu hidden">
+                        <li class="community-menu-item"><a href="/notice">notice</a></li>
+                        <li class="community-menu-item"><a href="#">Q&A</a></li>
+                    </ul>
+                </div>
                 <div class="nav-item search">search</div>
             </div>
 
@@ -38,37 +48,49 @@
 
             <div class="main-lookbook-part">
                 <div class="main-lookbook-container">
-                    <div class="main-lookbook-detail">
-                        <div class="main-lookbook-release-date">
-                            spring 2022.
+                    <% for(let item of lookbooks) { %>
+                        <div class="main-lookbook-row">
+                            <div class="main-lookbook-detail">
+
+                                <div class="main-lookbook-detail-set">
+                                    <div class="main-lookbook-release-date">
+                                        <%= item.season %>
+                                        <%= item.year %>.
+                                    </div>
+                                    <div class="main-lookbook-title">
+                                        <%= item.title %>
+                                    </div>
+                                    <div class="main-lookbook-subtitle">
+                                        <%= item.subtitle %>
+                                    </div>
+                                </div>
+
+                                <div class="main-lookbook-view">
+                                    <a href="#">view all</a>
+                                </div>
+                                
+                            </div>
+                            <% for(let i=0; i < 4; i++) { %>
+                            <div class="main-lookbook-photo">
+                                <img 
+                                    class="main-lookbook-img" 
+                                    src="/images/lookbookImage/<%= item.images[i]['name'] %>" 
+                                    alt="thumnnail" 
+                                    width="410" 
+                                    height="470"
+                                >
+                            </div>
+                            <% } %>
                         </div>
-                        <div class="main-lookbook-title">
-                            official lookbook
-                        </div>
-                        <div class="main-lookbook-subtitle">
-                            ARRT`EMIS Grand Exploration
-                        </div>
-                        <div class="main-lookbook-view">
-                            <a href="#">view all</a>
-                        </div>
-                    </div>
-                    <div class="main-lookbook-photo">
-                        <img class="main-lookbook-img" src="./images/lookbook3.jpg" alt="l1">
-                    </div>
-                    <div class="main-lookbook-photo">
-                        <img class="main-lookbook-img" src="./images/lookbook3.jpg" alt="l2">
-                    </div>
-                    <div class="main-lookbook-photo">
-                        <img class="main-lookbook-img" src="./images/lookbook3.jpg" alt="l3">
-                    </div>
-                    <div class="main-lookbook-photo">
-                        <img class="main-lookbook-img" src="./images/lookbook3.jpg" alt="l4">
-                    </div>
+                    <% } %>
                 </div>
             </div>
 
         </div> 
     </div>
+    <script src="/assets/js/index.js"></script>
+    <script src="/assets/js/scroll.js"></script>
+    <script src="https://unpkg.com/@webcreate/infinite-ajax-scroll/dist/infinite-ajax-scroll.min.js"></script>
 </body>
 
 </html>

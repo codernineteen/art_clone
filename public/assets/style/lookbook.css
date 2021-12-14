@@ -14,6 +14,30 @@ body {
   font-family: Acumin Pro, sans-serif;
 }
 
+a:visited,
+a:link {
+  text-decoration: none;
+  color: inherit;
+}
+
+li {
+  list-style: none;
+}
+
+.hidden {
+  display: none;
+}
+
+.align-items-row {
+  display: flex;
+  flex-direction: row;
+}
+
+.available-margin {
+  display: block;
+  margin-right: 1rem;
+}
+
 .wrapper {
   position: relative;
   height: 100vh;
@@ -33,7 +57,16 @@ body {
 .nav {
   display: flex;
   justify-content: space-around;
+}
+
+.nav-item {
   font-size: 2rem;
+  margin-left: 2rem;
+  text-transform: uppercase;
+}
+
+.nav-item:hover {
+  color: #888;
 }
 
 .nav-item {
@@ -49,25 +82,71 @@ body {
 
 .main-menu-part {
   width: 8%;
+  font-size: 1.5rem;
+  font-weight: 700;
+  text-transform: uppercase;
 }
 
 .main-lookbook-part {
   flex: 1;
 }
 
-.main-lookbook-container {
-  display: flex;
+.main-lookbook-row {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
 }
 
 .main-lookbook-detail {
   border-top: 2px solid #000;
   border-top: 2px solid #000;
+  position: relative;
+  padding: auto 0;
 }
 
 .main-lookbook-photo {
-  width: 20%;
   border-top: 1px solid #000;
   border-left: 1px solid #000;
+}
+
+.main-lookbook-detail-set {
+  margin-top: 20rem;
+}
+
+.main-lookbook-release-date,
+.main-lookbook-title,
+.main-lookbook-subtitle,
+.main-lookbook-view {
+  text-transform: uppercase;
+}
+
+.main-lookbook-release-date {
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.main-lookbook-title {
+  font-size: 3rem;
+  font-weight: 700;
+}
+
+.main-lookbook-subtitle {
+  font-size: 1.75rem;
+  font-weight: 700;
+}
+
+.main-lookbook-view {
+  position: absolute;
+  bottom: 0;
+  font-size: 1.5rem;
+  font-weight: 700;
+  border-bottom: 5px solid black;
+  transition: all 0.3s;
+}
+
+.main-lookbook-view:hover {
+  background-color: #222;
+  border-bottom: 5px solid #222;
+  color: #ddd;
 }
 
 .main-lookbook-img {

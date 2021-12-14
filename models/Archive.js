@@ -1,5 +1,10 @@
 const mongoose = require('mongoose');
 
+const ImageSchema = new mongoose.Schema({
+    name: {type: [String], required: true},
+    path: {type: [String], required: true}
+})
+
 const ArchiveSchema = new mongoose.Schema({
     title: {
         type: String,
@@ -15,7 +20,6 @@ const ArchiveSchema = new mongoose.Schema({
     },
     season : {
         type: String,
-        enum: ["spring", "summer", "fall", "winter"],
         required: [true, 'season needed']
     },
     year : {
@@ -23,7 +27,7 @@ const ArchiveSchema = new mongoose.Schema({
         required: true
     },
     images: {
-        type: [String]
+        type: [ImageSchema]
     }
 
 }, {timestamps: true});
