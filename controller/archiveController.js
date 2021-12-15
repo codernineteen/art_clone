@@ -42,6 +42,15 @@ const getSingleLookbook = async (req, res) => {
     res.status(StatusCodes.OK).json({lookbook})
 }
 
+const getSingleLookbookJson = async (req, res) => {
+    let result = Archive.find({})
+    let count = req.body.count;
+    const skip = (count - 1) * 1
+    result = result.skip(skip).limit(1)
+    const lookbooks = await result
+    res.status(StatusCodes.OK).json({lookbooks})
+}
+
 const updateLookbook = async (req, res) => {
     const lookbook = await Archive.findOneAndUpdate({_id: req.params.id}, req.body, {new: true, runValidators: true});
     if(!lookbook) {
@@ -63,5 +72,6 @@ module.exports = {
     getAllLookbooks,
     getSingleLookbook,
     updateLookbook,
-    deleteLookbook
+    deleteLookbook,
+    getSingleLookbookJson
 }

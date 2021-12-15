@@ -1,10 +1,11 @@
 const express = require('express');
 const router = express.Router();
 const {authentication, authorizePermission} = require('../middleware/authenticate');
+
 //multer
-const path = require('path')
-const multer = require('multer')
-const uploadPath = path.join(__dirname, '../public/images/lookbookImage')
+const path = require('path');
+const multer = require('multer');
+const uploadPath = path.join(__dirname, '../public/images/lookbookImage');
 
 const storage = multer.diskStorage({
     destination: function (req, file, cb) {
@@ -21,14 +22,13 @@ const upload = multer({
     }
 })
 
-module.exports = upload;
-
 const {
     createLookbook,
     getAllLookbooks,
     getSingleLookbook,
     updateLookbook,
-    deleteLookbook
+    deleteLookbook,
+    getSingleLookbookJson
 } = require('../controller/archiveController');
 
 
@@ -45,6 +45,8 @@ router.route('/create')
             ]
         ), 
         createLookbook)
+
+router.route('/partialData').post(getSingleLookbookJson)
 
 router.route('/:id')
     .get(getSingleLookbook)

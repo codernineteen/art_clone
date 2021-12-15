@@ -40,7 +40,6 @@ li {
 
 .wrapper {
   position: relative;
-  height: 100vh;
   margin: 2rem;
 }
 /*header*/
@@ -75,7 +74,6 @@ li {
 /*main*/
 .main-section {
   display: flex;
-  height: 80%;
   padding-left: 2rem;
   padding-top: 3rem;
 }
@@ -94,12 +92,12 @@ li {
 .main-lookbook-row {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
+  position: relative;
 }
 
 .main-lookbook-detail {
   border-top: 2px solid #000;
   border-top: 2px solid #000;
-  position: relative;
   padding: auto 0;
 }
 
@@ -161,4 +159,41 @@ li {
 .footer-item {
   margin: 2rem;
   font-size: 1.5rem;
+}
+
+/* animation */
+.fade-in {
+  opacity: 1;
+  animation-name: fadeInOpacity;
+  animation-iteration-count: 1;
+  animation-timing-function: ease-in;
+  animation-duration: 0.5s;
+}
+
+.fade-out {
+  opacity: 0;
+  animation-name: fadeOutOpacity;
+  animation-iteration-count: 1;
+  animation-timing-function: ease-in;
+  animation-duration: 0.5s;
+}
+
+@keyframes fadeInOpacity {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeOutOpacity {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
 }

@@ -48,42 +48,8 @@
 
             <div class="main-lookbook-part">
                 <div class="main-lookbook-container">
-                    <% for(let item of lookbooks) { %>
-                        <div class="main-lookbook-row">
-                            <div class="main-lookbook-detail">
-
-                                <div class="main-lookbook-detail-set">
-                                    <div class="main-lookbook-release-date">
-                                        <%= item.season %>
-                                        <%= item.year %>.
-                                    </div>
-                                    <div class="main-lookbook-title">
-                                        <%= item.title %>
-                                    </div>
-                                    <div class="main-lookbook-subtitle">
-                                        <%= item.subtitle %>
-                                    </div>
-                                </div>
-
-                                <div class="main-lookbook-view">
-                                    <a href="#">view all</a>
-                                </div>
-                                
-                            </div>
-                            <% for(let i=0; i < 4; i++) { %>
-                            <div class="main-lookbook-photo">
-                                <img 
-                                    class="main-lookbook-img" 
-                                    src="/images/lookbookImage/<%= item.images[i]['name'] %>" 
-                                    alt="thumnnail" 
-                                    width="410" 
-                                    height="470"
-                                >
-                            </div>
-                            <% } %>
-                        </div>
-                    <% } %>
                 </div>
+                <div class="loading-message">Loading lookbooks...</div>
             </div>
 
         </div> 
