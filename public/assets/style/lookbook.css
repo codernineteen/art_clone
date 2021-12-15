@@ -40,6 +40,7 @@ li {
 
 .wrapper {
   position: relative;
+  height: 100vh;
   margin: 2rem;
 }
 /*header*/
@@ -68,21 +69,64 @@ li {
   color: #888;
 }
 
-.nav-item {
-  padding-right: 1rem;
+.community-menu-item {
+  font-weight: 700;
+  font-size: 1.5rem;
+  color: #000;
 }
+.community-menu-item:hover {
+  color: #eee;
+}
+
 /*main*/
 .main-section {
   display: flex;
+  height: 80%;
   padding-left: 2rem;
   padding-top: 3rem;
+  margin-bottom: 7rem;
 }
 
 .main-menu-part {
-  width: 8%;
-  font-size: 1.5rem;
+  width: 20%;
+}
+/* menu-iten */
+.main-section {
+  display: flex;
+  height: 70%;
+  padding-left: 2rem;
+  padding-top: 3rem;
+  margin-bottom: 7rem;
+}
+
+.main-menu-part {
+  width: 10%;
+  font-size: 2rem;
   font-weight: 700;
   text-transform: uppercase;
+}
+
+.main-item {
+  font-size: 2rem;
+  text-transform: uppercase;
+}
+
+.main-item:hover {
+  color: #888;
+}
+
+.archive-menu {
+  padding-top: 0.5rem;
+}
+
+.archive-menu-item {
+  font-weight: 700;
+  font-size: 1.5rem;
+  color: #000;
+}
+
+.archive-menu-item:hover {
+  color: #eee;
 }
 
 .main-lookbook-part {
@@ -93,6 +137,7 @@ li {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
   position: relative;
+  border-top: 2px solid #000;
 }
 
 .main-lookbook-detail {
@@ -104,6 +149,11 @@ li {
 .main-lookbook-photo {
   border-top: 1px solid #000;
   border-left: 1px solid #000;
+}
+
+.main-lookbook-img {
+  margin: 0;
+  height: 100%;
 }
 
 .main-lookbook-detail-set {
@@ -162,6 +212,11 @@ li {
 }
 
 /* animation */
+.loading-message {
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
 .fade-in {
   opacity: 1;
   animation-name: fadeInOpacity;

@@ -60,8 +60,8 @@ const requestData = async () => {
             image.classList.add('main-lookbook-img');
             image.setAttribute('src', `/images/lookbookImage/${item.images[i]['name']}`)
             image.setAttribute('alt', 'thumbnail');
-            image.setAttribute('width', 410);
-            image.setAttribute('height', 470);
+            image.setAttribute('width', 332);
+            image.setAttribute('height', 476);
             imageWrapper.appendChild(image);
             row.appendChild(imageWrapper)
         }

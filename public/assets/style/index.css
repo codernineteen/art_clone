@@ -1,99 +1,13 @@
-*,
-*::after,
-*::before {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-html {
-  font-size: 62.5%;
-}
-
-body {
-  font-family: Acumin Pro, sans-serif;
-}
-
-a:visited,
-a:link {
-  text-decoration: none;
-  color: inherit;
-}
-
-li {
-  list-style: none;
-}
-
-.hidden {
-  display: none;
-}
-
-.align-items-row {
-  display: flex;
-  flex-direction: row;
-}
-
-.available-margin {
-  display: block;
-  margin-right: 1rem;
-}
-
-.wrapper {
-  position: relative;
-  height: 100vh;
-  margin: 2rem;
-}
-/*header*/
-.header {
-  display: flex;
-  justify-content: space-between;
-  height: 10%;
-}
-
-.header-logo-part img {
-  width: 20rem;
-}
-
-.nav {
-  display: flex;
-  justify-content: space-around;
-}
-
-.nav-item {
-  font-size: 2rem;
-  margin-left: 2rem;
-  text-transform: uppercase;
-}
-
-.nav-item:hover {
-  color: #888;
-}
-
-/*main*/
 .main-section {
   display: flex;
-  height: 70%;
+  height: 80%;
   padding-left: 2rem;
   padding-top: 3rem;
   margin-bottom: 7rem;
 }
 
-.main-logo-part img {
-  height: 5rem;
-  width: 5rem;
-}
-
 .main-menu-part {
   width: 20%;
-}
-/* menu-iten */
-.main-item {
-  font-size: 2rem;
-  text-transform: uppercase;
-}
-
-.main-item:hover {
-  color: #888;
 }
 
 .main-logo-part {

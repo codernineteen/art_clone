@@ -10,6 +10,9 @@
     <!-- font -->
     <link rel="stylesheet" href="https://use.typekit.net/snx7zgg.css">
     <link rel="stylesheet" href="/assets/style/product.css">
+    <link rel="stylesheet" href="/assets/style/common.css">
+    <!-- icon -->
+    <script src="https://kit.fontawesome.com/0f0c6f90bb.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
@@ -17,13 +20,21 @@
         <div class="header">
 
             <div class="header-logo-part">
-                <img src="/images/폰트LOGO.png" alt="ARRT`EMIS FONT LOGO">
+                <a href="/"> <img src="/images/폰트LOGO.png" alt="ARRT`EMIS FONT LOGO"></a>
             </div>
             
             <div class="nav">
-                <div class="nav-item portal">portal</div>
-                <div class="nav-item instagram">instagram</div>
-                <div class="nav-item community">community</div>
+                <div class="nav-item portal"><i class="fab fa-instalod"></i></div>
+                <div class="nav-item instagram">
+                    <a href="https://www.instagram.com/arrtemis__official/" target="_blank"><i class="fab fa-instagram"></i></a>
+                </div>
+                <div class="nav-item community">
+                    <label for="community-menu">community</label>
+                    <ul name="community-menu" class="community-menu hidden">
+                        <li class="community-menu-item"><a href="/notice">notice</a></li>
+                        <li class="community-menu-item"><a href="#">Q&A</a></li>
+                    </ul>
+                </div>
                 <div class="nav-item search">search</div>
             </div>
 
@@ -32,12 +43,18 @@
         <div class="main-section">
 
             <div class="main-menu-part">
-                <div class="main-item title">about</div>
-                <div class="main-item all-items">allItems</div>
-                <div class="main-item top">top</div>
-                <div class="main-item hats">hats</div>
-                <div class="main-item others">others</div>
-                <div class="main-item archive">archive</div>
+                <div class="main-item title">about.</div>
+                <div class="main-item all-items"><a href="/products">allItems.</a></div>
+                <div class="main-item top"><a href="/products?category=top">tops.</a></div>
+                <div class="main-item hats"><a href="/products?category=hats">hats.</a>.</div>
+                <div class="main-item others"><a href="/products?category=others">others.</a></div>
+                <div class="main-item archive">
+                    <label for="archive-menu" class="archive-menu-label">archive.</label>
+                    <ul name="archive-menu" class="archive-menu hidden">
+                        <li class="archive-menu-item"><a href="/archives/lookbook">lookbook</a></li>
+                        <li class="archive-menu-item"><a href="#">videos</a></li>
+                    </ul>
+                </div>
             </div>
 <!-- pagination needed-->
             <div class="main-product-part">
@@ -59,6 +76,11 @@
                     <% } %>
 
                 </div>
+                <div class="pagination-button-set">
+                    <!-- page location and add query string (?page='') -->
+                    <button class="prevBtn"><i class="fas fa-chevron-left total_prev_icon"></i></button>
+                    <button class="nextBtn"><i class="fas fa-chevron-right total_next_icon"></i></button>
+                </div>
             </div>
         </div>
     
@@ -74,6 +96,9 @@
 
         </div>  
     </div>
+
+    <script src="/assets/js/index.js"></script>
+    <script src="/assets/js/productAll.js"></script>
 </body>
 
 </html>

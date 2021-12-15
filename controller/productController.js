@@ -40,7 +40,17 @@ const createProduct = async (req, res) => {
 }
 
 const getAllProduct = async (req, res) => {
-    const products = await Product.find({})
+    const category = req.query.category;
+    let result = Product.find({})
+    if(category) {
+        result = Product.find({category: category})
+    }
+    const page = Number(req.query.page) || 1
+    const limit = 12;
+    const skip = (page - 1) * limit;
+    result = result.skip(skip).limit(limit)
+    
+    const products = await result
     res.status(StatusCodes.OK).render('products', {products})
 }
 
